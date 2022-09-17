@@ -1,5 +1,5 @@
 {
-  "reporter": ["html", "test"],
+  "reporter": ["html", "text"],
   "branches": 100,
   "lines": 100,
   "functions": 100,
