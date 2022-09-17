@@ -1,0 +1,23 @@
+[
+  {
+    "id": "daa83dec-335e-4206-8024-cc8a8b60ac56",
+    "name": "Explorer",
+    "releaseYear": 2022,
+    "available": true,
+    "gasAvailable": true
+  },
+  {
+    "id": "7ebe3f99-a6b8-4117-88ed-20f7c80548d3",
+    "name": "Roadster",
+    "releaseYear": 2021,
+    "available": true,
+    "gasAvailable": true
+  },
+  {
+    "id": "032dbcd5-bcf5-410c-8b1f-76b9d81793cd",
+    "name": "Model T",
+    "releaseYear": 2021,
+    "available": true,
+    "gasAvailable": true
+  }
+]

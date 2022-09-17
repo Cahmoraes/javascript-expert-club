@@ -1,0 +1,9 @@
+{
+  "reporter": ["html", "test"],
+  "branches": 100,
+  "lines": 100,
+  "functions": 100,
+  "statements": 100,
+  "checkCoverage": true,
+  "exclude": ["src/repository/base/baseRepository.js"]
+}

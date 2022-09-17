@@ -1,0 +1,23 @@
+[
+  {
+    "id": "c54a6306-1f0f-4561-999d-856a1ebc4da7",
+    "name": "Countach",
+    "releaseYear": 2021,
+    "available": true,
+    "gasAvailable": true
+  },
+  {
+    "id": "635caf57-f3f0-4f1e-9bc1-96ffa37c162a",
+    "name": "Altima",
+    "releaseYear": 2022,
+    "available": true,
+    "gasAvailable": true
+  },
+  {
+    "id": "8f553b9a-2518-40b9-899f-9e01fa90e934",
+    "name": "Corvette",
+    "releaseYear": 2022,
+    "available": true,
+    "gasAvailable": true
+  }
+]
