@@ -1,0 +1,21 @@
+{
+  "name": "@cahmoraes93/fluentsql",
+  "version": "2.0.0",
+  "description": "",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "start": "node --experimental-json-modules src/",
+    "test": "npx jest --config jest.config.mjs ",
+    "test:cov": "npx jest --config jest.config.mjs --coverage ",
+    "test:watch": "npx jest --config jest.config.mjs --watchAll "
+  },
+  "keywords": [],
+  "author": "cahmoraes",
+  "license": "ISC",
+  "devDependencies": {
+    "@babel/preset-env": "^7.19.1",
+    "babel-jest": "^29.0.3",
+    "jest": "^26.6.3"
+  }
+}
