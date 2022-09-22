@@ -1,0 +1,21 @@
+{
+  "name": "fluent-api",
+  "version": "1.0.0",
+  "description": "",
+  "type": "module",
+  "main": "index.js",
+  "scripts": {
+    "start": "node --experimental-json-modules ./src/index.js",
+    "test": "npx jest --config jest.config.mjs --passWithNoTests --runInBand",
+    "test:cov": "npx jest --config jest.config.mjs --coverage",
+    "test:watch": "npx jest --config jest.config.mjs --watchAll --runInBand"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@babel/preset-env": "^7.19.1",
+    "babel-jest": "^29.0.3",
+    "jest": "^26.6.3"
+  }
+}
