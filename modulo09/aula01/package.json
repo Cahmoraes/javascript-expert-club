@@ -1,0 +1,20 @@
+{
+  "name": "@cahmoraes93/codegen",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "start": "node --experimental-json-modules src/",
+    "test": "npx jest --runInBand --no-cache --config jest.config.mjs",
+    "test:cov": "npx jest --config jest.config.mjs --coverage",
+    "test:watch": "npx jest --config jest.config.mjs --watchAll  --no-cache --runInBand"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@babel/preset-env": "^7.19.3",
+    "babel-jest": "^29.1.0",
+    "jest": "^26.6.3"
+  }
+}
