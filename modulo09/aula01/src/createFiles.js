@@ -1,4 +1,3 @@
-import fs from 'fs'
 import fsPromises from 'fs/promises'
 import templates from './templates/index.js'
 import Util from './util.js'
@@ -6,17 +5,25 @@ import Util from './util.js'
 const defaultDependencies = (layer, componentName) => {
   const dependencies = {
     repository: [],
-    service: [`${componentName}Repository`],
+    service: [
+      // ProductRepository
+      `${componentName}Repository`,
+    ],
     factory: [`${componentName}Repository`, `${componentName}Service`],
   }
 
-  return dependencies[layer].map(Util.lowerCaseFirstLetter)
+  return (
+    dependencies[layer]
+      // Pode ser que venha: Product
+      // Quero que retorne: product
+      .map(Util.lowerCaseFirstLetter)
+  )
 }
 
 async function executeWrites(pendingFilesToWrite) {
   return Promise.all(
-    pendingFilesToWrite.map(({ fileName, textFile }) =>
-      fsPromises.writeFile(fileName, textFile),
+    pendingFilesToWrite.map(({ fileName, txtFile }) =>
+      fsPromises.writeFile(fileName, txtFile),
     ),
   )
 }
@@ -29,36 +36,36 @@ export async function createFiles({
 }) {
   const keys = Object.keys(templates)
   const pendingFilesToWrite = []
-
   for (const layer of layers) {
-    const chosenTemplate = keys.find((key) => key.includes(layer))
     /*
-      keys = [
-        factoryTemplate,
-        serviceTemplate,
-        repositoryTemplate,
-      ]
-    */
+        keys = [
+            factoryTemplate,
+            serviceTemplate,
+            repositoryTemplate
+        ]
+
+        layers = ['inexistent']
+
+        */
+    const chosenTemplate = keys.find((key) => key.includes(layer))
     if (!chosenTemplate) {
       return { error: 'the chosen layer doesnt have a template' }
     }
 
     const template = templates[chosenTemplate]
     // só o exemplo debaixo /Users/Document/jsexpert/codegen/src/factory
-    const targetFolder = `${mainPath}/${defaultMainFolder}/layer`
+    const targetFolder = `${mainPath}/${defaultMainFolder}/${layer}`
     const dependencies = defaultDependencies(layer, componentName)
-
-    const { fileName: className, template: textFile } = template(
+    const { fileName: className, template: txtFile } = template(
       componentName,
       ...dependencies,
     )
 
-    // só o exemplo debaixo /Users/Document/jsexpert/codegen/src/factory
+    // só o exemplo debaixo /Users/Document/jsexpert/codegen/src/factory/heroesFactory.js
     const fileName = `${targetFolder}/${Util.lowerCaseFirstLetter(
       className,
     )}.js`
-
-    pendingFilesToWrite.push({ fileName, textFile })
+    pendingFilesToWrite.push({ fileName, txtFile })
   }
 
   await executeWrites(pendingFilesToWrite)

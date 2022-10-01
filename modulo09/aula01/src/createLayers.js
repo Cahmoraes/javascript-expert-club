@@ -1,6 +1,5 @@
-import fs from 'fs'
 import fsPromises from 'fs/promises'
-
+import fs from 'fs'
 export async function createLayersIfNotExists({
   mainPath,
   defaultMainFolder,
@@ -8,7 +7,6 @@ export async function createLayersIfNotExists({
 }) {
   const defaultPath = `${mainPath}/${defaultMainFolder}`
   const foldersToCreate = layers.filter((layer) => !fs.existsSync(layer))
-
   const results = foldersToCreate.map((folder) =>
     fsPromises.mkdir(`${defaultPath}/${folder}`, { recursive: true }),
   )
