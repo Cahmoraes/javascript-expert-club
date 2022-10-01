@@ -3,8 +3,8 @@
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
-  "type": "module",
   "scripts": {
+    "monada": "ts-node-dev --respawn --transpile-only --ignore-watch node_modules ./src/examples.ts",
     "test:watch": "npx jest --config jest.config.mjs --watchAll",
     "test:cov": "npx jest --config jest.config.mjs --coverage",
     "start": "nodemon ./src/maybe.js"
@@ -16,6 +16,7 @@
     "@babel/preset-env": "^7.19.1",
     "babel-jest": "^29.0.3",
     "jest": "^29.0.3",
-    "nodemon": "^2.0.20"
+    "nodemon": "^2.0.20",
+    "ts-node-dev": "^2.0.0"
   }
 }
