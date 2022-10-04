@@ -1,0 +1,20 @@
+{
+  "name": "examples",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "start-server": "node webapi.js",
+    "api1": "curl localhost:3000",
+    "api2": "curl localhost:4000",
+    "example01": "node 1.concat-streams.pass-through.js",
+    "example02": "node 2.async-streams.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "axios": "^0.27.2"
+  }
+}
